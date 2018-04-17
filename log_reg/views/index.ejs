@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="log">
+       <%if(typeof(user) !== 'undefined' && user){%>
+        <h1>Welcome <%= user.username %>, 欢迎登录！！</h1>  
+        <a class="btn" href="/logout">退出</a> 
+        <%}else{%> 
+        <p>Welcome  , <a class="btn" href="/log">请登录！！</a></p>  
+        <%}%> 
+    </div>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %> page</p>
+    <p><a href="/log" >登录</a><a href="/reg">注册</a></p>
+
+    <!-- <p><a href="/mongo" >mongo</a></p> -->
+    
+    <!-- 循环 -->
+    <h4>循环</h4>
+     <ul>
+		<% for(var i=0; i<supplies.length; i++) {%>
+		   <li><%= supplies[i] %></li>
+		<% } %>
+	</ul>
+   <!-- 引入模版 -->
+  <h4>引入模版</h4>
+	<h2><%- include a %></h2>
+	<h2>hello,world!</h2>
+	<h2><%- include b %></h2>
+  <h4>循环</h4>
+    <ul>  
+      <% for(i=0; i< userlist.length; i++) {%>  
+         <li><a><%= userlist[i].username %></a></li>  
+      <% } %>  
+    </ul> 
+  </body>
+</html>

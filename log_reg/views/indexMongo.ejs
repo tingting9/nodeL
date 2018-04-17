@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+      <ul>
+		<% for(var i=0; i<user.length; i++) {%>
+		   <li>姓名：<%= user[i].name %></li>
+		   <li>年龄：<%= user[i].age %></li>
+		<% } %>
+	</ul>
+
+  </body>
+</html>

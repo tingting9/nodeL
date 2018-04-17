@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/styleLog.css' />
+  </head>
+  <body>
+    <h3>登录</h3>
+    <form class="formBox" role="form" method="post" onsubmit="return false">
+        <input type="text" class="username" id="username" name="username" placeholder="请输入用户名" required>
+        <input type="text" class="keyword" id="keyword" name="keyword" placeholder="输入密码" required>
+        <button type="submit" class="btn_log" id="btn_log">登录</button>
+    </form>
+    <div class="msg"></div>
+    <script type="text/javascript" src="/javascripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/log.js"></script>
+  </body>
+</html>
