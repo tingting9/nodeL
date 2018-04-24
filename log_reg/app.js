@@ -24,6 +24,14 @@ app.set('view engine', 'ejs');                     //设置模板引擎，代表
 app.use('/', index); //模版
 app.use('/users', users);//接口
 
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
 
 //指定静态资源位置 *托管静态文件 (下面个方法相同)
 app.use(express.static(path.join(__dirname, 'public')));
