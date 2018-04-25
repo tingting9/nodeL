@@ -4,9 +4,8 @@ var mysql = require('mysql');
 
 //连接服务器
 var config = require('../config/config');
-var configB = require('../config/configB');
 // var session = require('cookie-session');
-console.log(config)
+
 //get请求参数对象 :',req.query/post请求参数对象 :',req.body 
 router.route('/signup')
 	//登录 
@@ -14,7 +13,7 @@ router.route('/signup')
 	    var username = req.body.username;
 	    var password = req.body.keyword;
 	  	
-	  	configB.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){
+	  	config.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){
 	  		console.log(data,'user');
 	  		if (data.code == 1) {
                     res.json({code:'1',msg:'没有该用户'});
@@ -65,14 +64,14 @@ router.route('/signup')
 	    var password = req.query.password;
 	    var dataInf= {"regName":username,"keyword":password};
 
-		 config.getConnection('insert into register set ?',dataInf).then(function(data) {
-		 	if(data.code==0){
-		 		res.json({code:'0',msg:'注册成功'});
-		 	}else if(data.code==1){
-		 		res.json({code:'1',msg:'注册失败'});
-		 	}
-		 	res.end();
-	    }).catch(function(err){})
+		 // config.getConnection('insert into register set ?',dataInf).then(function(data) {
+		 // 	if(data.code==0){
+		 // 		res.json({code:'0',msg:'注册成功'});
+		 // 	}else if(data.code==1){
+		 // 		res.json({code:'1',msg:'注册失败'});
+		 // 	}
+		 // 	res.end();
+	  //   }).catch(function(err){})
 
   	})
 
