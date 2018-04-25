@@ -3,7 +3,7 @@ var connection = {};
 
 //连接服务
 
-// connection.select=function(sql,param){
+connection.select=function(sql,param,callback){
     var result = null;
     var connection = mysql.createConnection({
 	    host:'qdm114284563.my3w.com',
@@ -13,20 +13,20 @@ var connection = {};
 	    port:'3306'
 	});
 	connection.connect();
-    var sql = 'SELECT * FROM register where regName = "suntt";';
-    connection.query(sql, {},function (err, results, fields) { 
+
+    connection.query(sql,param,function (err, results, fields) { 
         if (err) { 
             console.log(err); 
         };
-        // console.log(results,'----')
+        console.log(results,'----')
         if (results.length == 0) {
-            console.log ({code:'1'});
+            callback({code:'1'});
         }else{
-            console.log({code:'0',results:results});
+            callback({code:'0',results:results});
         };
       } 
     );
     connection.end(); 
-// };
+};
 
-// exports.getConnection = connection.select;
+exports.getConnection = connection.select;

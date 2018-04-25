@@ -14,8 +14,10 @@ router.route('/signup')
 	    var username = req.body.username;
 	    var password = req.body.keyword;
 	  	
-	  	var results = configB.getConnection('SELECT * FROM register where regName = "'+username+'";')
-	  	console.log(results);
+	  	configB.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(results){
+	  		console.log(results,'user')
+	  	})
+
 	    // config.getConnection('SELECT * FROM register where regName = "'+username+'";').then(function(data) {
 	    // 	if (data.code == 1) {
      //                res.json({code:'1',msg:'没有该用户'});
