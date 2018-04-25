@@ -4,6 +4,7 @@ var mysql = require('mysql');
 
 //连接服务器
 var config = require('../config/config');
+var configB = require('../config/configB');
 // var session = require('cookie-session');
 console.log(config)
 //get请求参数对象 :',req.query/post请求参数对象 :',req.body 
@@ -12,28 +13,30 @@ router.route('/signup')
     .post(function(req, res) {
 	    var username = req.body.username;
 	    var password = req.body.keyword;
-	  
-	    config.getConnection('SELECT * FROM register where regName = "'+username+'";').then(function(data) {
-	    	if (data.code == 1) {
-                    res.json({code:'1',msg:'没有该用户'});
-            } ;
-            if(data.code==0){
-            	var oKey=data.results[0].keyword;
-            	var oName=data.results[0].regName;
+	  	
+	  	var results = configB.getConnection('SELECT * FROM register where regName = "'+username+'";')
+	  	console.log(results);
+	    // config.getConnection('SELECT * FROM register where regName = "'+username+'";').then(function(data) {
+	    // 	if (data.code == 1) {
+     //                res.json({code:'1',msg:'没有该用户'});
+     //        } ;
+     //        if(data.code==0){
+     //        	var oKey=data.results[0].keyword;
+     //        	var oName=data.results[0].regName;
 
-            	if(oKey == password && oName == username){
+     //        	if(oKey == password && oName == username){
             		
-            		//存cookie
-            		res.cookie("user", {username: username}, {maxAge: 600000 , httpOnly: false});
+     //        		//存cookie
+     //        		res.cookie("user", {username: username}, {maxAge: 600000 , httpOnly: false});
             		
-            		res.json({code:'0',msg:'登录成功'});
-            	}else if(oName == username){
-            		res.json({code:'1',msg:'密码错误'});
-                    res.location('/')
-            	};
-            };
-	        res.end();
-	    }).catch(function(err){})
+     //        		res.json({code:'0',msg:'登录成功'});
+     //        	}else if(oName == username){
+     //        		res.json({code:'1',msg:'密码错误'});
+     //                res.location('/')
+     //        	};
+     //        };
+	    //     res.end();
+	    // }).catch(function(err){})
 	})
 	//注册
 	.get(function(req, res) {
