@@ -31,7 +31,7 @@ router.route('/signup')
             		res.json({code:'0',msg:'登录成功'});
             	}else if(oName == username){
             		res.json({code:'1',msg:'密码错误'});
-                    res.location('/')
+                    // res.location('/')
             	};
             };
 	        res.end();
