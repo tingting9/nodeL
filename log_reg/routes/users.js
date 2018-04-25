@@ -14,9 +14,28 @@ router.route('/signup')
 	    var username = req.body.username;
 	    var password = req.body.keyword;
 	  	
-	  	configB.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(results){
-	  		console.log(results,'user')
-	  	})
+	  	configB.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){
+	  		console.log(data,'user');
+	  		if (data.code == 1) {
+                    res.json({code:'1',msg:'没有该用户'});
+            } ;
+            if(data.code==0){
+            	var oKey=data.results[0].keyword;
+            	var oName=data.results[0].regName;
+
+            	if(oKey == password && oName == username){
+            		
+            		//存cookie
+            		res.cookie("user", {username: username}, {maxAge: 600000 , httpOnly: false});
+            		
+            		res.json({code:'0',msg:'登录成功'});
+            	}else if(oName == username){
+            		res.json({code:'1',msg:'密码错误'});
+                    res.location('/')
+            	};
+            };
+	        res.end();
+	  	});
 
 	    // config.getConnection('SELECT * FROM register where regName = "'+username+'";').then(function(data) {
 	    // 	if (data.code == 1) {
