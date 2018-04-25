@@ -11,7 +11,7 @@ var connection = {};
 		    port:'3306'
 		});
 		connection.connect();
-        var sql ='SELECT * FROM register where regName = "'+username+'";';
+        var sql ='SELECT * FROM register where regName = "suntt";';
         connection.query(sql, {},function (err, results, fields) { 
             if (err) { 
                 console.log(err); 
