@@ -3,7 +3,7 @@ var app = require('../app');
 var debug = require('debug')('appdd:server');
 var http = require('http');
 var httpProxy = require('http-proxy');  
-var PORT = 80;
+var PORT = 3001;
 
  var proxy = httpProxy.createProxyServer({}); 
 
@@ -21,10 +21,13 @@ var server = http.createServer(function(req, res) {
   
    delete req.headers.host;
    switch(host){  
-     case 'pangzi.sun1985.com': 
+     case '10.9.1.11:3001': 
      console.log('进来')   
-         proxy.web(req, res, { target: 'http://pangzi.sun1985.com:3001/' });  
+         proxy.web(req, res, { target: 'https://www.baidu.com/' });  
      break;  
+     case '10.9.1.11:3001?v=111':  
+         proxy.web(req, res, { target: 'http://www.sina.com.cn/' });  
+     break;
      default:  
          res.writeHead(200, {  
            'Content-Type': 'text/plain'  
