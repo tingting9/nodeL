@@ -14,7 +14,7 @@ proxy.on('error', function (err, req, res) {
    });  
    res.end('error',err);  
 }); 
-
+ console.log('1.0的www')  
 var server = http.createServer(function(req, res) {  
    var host = req.headers.host;
    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;  
