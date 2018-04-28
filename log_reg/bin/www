@@ -88,6 +88,4 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-./configure --prefix=/usr/local/nginx-1.12.2   --with-pcre=/usr/local/pcre-8.39
 
-   sudo vim /etc/nginx/sites-available/default
