@@ -23,7 +23,7 @@ var server = http.createServer(function(req, res) {
    switch(host){  
     case 'pangzi.sun1985.com:3001': 
      console.log('进来sun1985')   
-         proxy.web(req, res, { target: 'http://www.sina.com.cn/' });  
+         proxy.web(req, res, { target: 'http://www.sun1985.com/oldfile/sun.html' });  
      break;  
      case '10.9.1.11:3001': 
      case '10.9.1.11:3001?v=111':  
