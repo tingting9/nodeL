@@ -5,9 +5,8 @@
         var username = $("#username").val().toLowerCase();
         var password = $("#keyWord").val();
         // var password2 = $("#keyWord2").val();
-      
         var data = {"username":username,"password":password};
-        console.log(data)
+        
         $.ajax({ 
             url:'/users/signup',
             type:'get',
