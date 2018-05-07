@@ -27,4 +27,26 @@
             }
         });
     });
+    $('.boxTest p').click(function(event) {
+        var oFrom = '山西';
+        var oYear = 2011;
+        var data = {'oFrom':oFrom,'year':oYear};
+  
+        $.ajax({
+            url:'/users/publicA',
+            type:'post',
+            data:data,
+            success:function(data,status){
+                var oImg=data.result[0].image.split('","');
+                    oImg=oImg[0];
+                    console.log(oImg)
+                    $('img').attr({src: oImg});
+            },
+            error:function(data,status){
+
+            }
+
+        })
+        /* Act on the event */
+    });;
 });

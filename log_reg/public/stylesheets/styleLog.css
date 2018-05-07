@@ -1,8 +1,8 @@
 h3{height:20px;background:#ccc;}
 label{width: 70px; display: inline-block;text-align: right;}
 
-
-
+.boxTest p{border:1px solid #ccc;background-color: #eee;border-radius: 2px;width:100px;height:26px;line-height: 26px;font-size: 16px;text-align: center;color:#dd94db;cursor: pointer;}
+img{width:200px;};
 
 
 

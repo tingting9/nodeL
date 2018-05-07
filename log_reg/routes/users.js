@@ -48,8 +48,23 @@ router.route('/signup')
                 res.json({code:'1',msg:'注册失败'});
             }
         });
-  	})
+  	});
 
+router.route('/publicA')
+    .post(function(req,res){
+        var oAdress = req.body.oFrom;
+        var oYear = req.body.year;
+
+        config.getConnection('SELECT * FROM imgall where  adress  = "'+oAdress+'" and year = "'+oYear+'"',{},function(data){
+            if(data.code == 1){
+                res.json({code:'1',msg:'没有相关内容'});
+            }else if(data.code == 0){
+                console.log(data.results)
+                res.json({code:'0',msg:'查询成功',result:data.results})
+            }
+        });
+
+    });
 
 module.exports = router;
 
