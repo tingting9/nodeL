@@ -39,7 +39,7 @@
             success:function(data,status){
                 var oImg=data.result[0].image.split('","');
                     oImg=oImg[0];
-                    console.log(oImg)
+ 
                     $('img').attr({src: oImg});
             },
             error:function(data,status){

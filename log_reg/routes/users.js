@@ -54,6 +54,7 @@ router.route('/publicA')
     .post(function(req,res){
         var oAdress = req.body.oFrom;
         var oYear = req.body.year;
+        console.log(oAdress,oYear)
 
         config.getConnection('SELECT * FROM imgall where  adress  = "'+oAdress+'" and year = "'+oYear+'"',{},function(data){
             if(data.code == 1){
