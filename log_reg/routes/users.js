@@ -60,7 +60,6 @@ router.route('/publicA')
             if(data.code == 1){
                 res.json({code:'1',msg:'没有相关内容'});
             }else if(data.code == 0){
-                console.log(data.results)
                 res.json({code:'0',msg:'查询成功',result:data.results})
             }
         });
