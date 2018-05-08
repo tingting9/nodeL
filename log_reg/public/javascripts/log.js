@@ -16,7 +16,7 @@
 
                 }else if(code==0){//成功
                      // location.href = '/';
-                     alert('成功')
+                    $('.msg').text(data.msg);
                 };
             },
             error: function(data,status){ 

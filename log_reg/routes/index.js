@@ -9,7 +9,7 @@ app.locals.title='自定义变量';
 router.get('/', function(req, res, next) {
 	res.setHeader('content-type', 'text/html;charset=uft8');
   if(req.cookies.user != null){
-    console.log(req.cookies.user,'====')
+    console.log(req.cookies.user,'已登录过')
     req.user=req.cookies.user;//已登录
   };
  

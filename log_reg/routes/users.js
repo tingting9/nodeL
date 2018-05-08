@@ -13,7 +13,7 @@ router.route('/signup')
 	    var username = req.body.username;
 	    var password = req.body.keyword;
 	  	config.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){
-	  		console.log(data,'user');
+
 	  		if (data.code == 1) {
                     res.json({code:'1',msg:'没有该用户'});
             } ;
@@ -24,7 +24,7 @@ router.route('/signup')
             	if(oKey == password && oName == username){
             		
             		//存cookie
-            		res.cookie("user", {username: username}, {maxAge: 600000 , httpOnly: false});
+            		res.cookie("user", {username: username}, {maxAge: 60000 , httpOnly: false});
             		
             		res.json({code:'0',msg:'登录成功'});
             	}else if(oName == username){
