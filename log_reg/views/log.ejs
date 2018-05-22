@@ -2,16 +2,32 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
     <link rel='stylesheet' href='/stylesheets/styleLog.css' />
   </head>
   <body>
-    <h3>登录</h3>
-    <form class="formBox" role="form" method="post" onsubmit="return false">
-        <input type="text" class="username" id="username" name="username" placeholder="请输入用户名" required>
-        <input type="text" class="keyword" id="keyword" name="keyword" placeholder="输入密码" required>
-        <button type="submit" class="btn_log" id="btn_log">登录</button>
-    </form>
-    <div class="msg"></div>
+    <div class="contentBox">
+        <h3>登录</h3>
+            <div class="logBoxline">
+                <input type="text" class="username" id="username" name="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="logBoxline">
+                <input type="password" class="keyword" id="keyword" name="keyword" placeholder="输入密码" required>
+            </div>
+            <div class="logBtn">
+                <div type="submit" class="btn_log" id="btn_log" data-lastPage=<%= lastPage %>>登<i></i>录</div>
+            </div>
+       
+        <div class="msg"></div>
+    </div>
     <script type="text/javascript" src="/javascripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/log.js"></script>
   </body>

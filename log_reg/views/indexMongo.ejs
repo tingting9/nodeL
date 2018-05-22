@@ -2,16 +2,25 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-      <ul>
-		<% for(var i=0; i<user.length; i++) {%>
-		   <li>姓名：<%= user[i].name %></li>
-		   <li>年龄：<%= user[i].age %></li>
-		<% } %>
-	</ul>
-
+    <div class="contentBox">
+      <h1><%= title %></h1>
+        <ul>
+  		<% for(var i=0; i<user.length; i++) {%>
+  		   <li>姓名：<%= user[i].name %></li>
+  		   <li>年龄：<%= user[i].age %></li>
+  		<% } %>
+  	</ul>
+  </div>
   </body>
 </html>

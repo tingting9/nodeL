@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
+    <link rel='stylesheet' href='/stylesheets/allImg.css' />
+</head>
+<body>
+ <div class="imgAll">
+      <%if (typeof(user) != undefined && user) {%>
+      <!-- 已登录 -->
+          <% if(user == 'suntt'){%>
+            <!--必须用suntt的帐户-->
+            <div class="logBox">
+            <% for(var i=0; i<list.length; i++) {%>
+               <div class="boxPhList">
+                 <div class="BoxL">
+                   <img src=<%=list[i].faceImg%> alt="">
+                 </div>
+                 <div class="boxR">
+                    <div class="boxRH">
+                       <h3><%=list[i].title%></h3>
+                       <div class="boxRtext">
+                          <% for(var j=0; j<list[i].listName.length; j++){%>
+                            <span><%=list[i].listName[j]%></span>
+                          <%}%>
+                       </div>
+                    </div>
+                   <p><span><%=list[i].year%></span><span><%=list[i].adress%></span></p>
+                 </div>
+               </div>
+            <%}%>   
+            </div>
+          <%}else{%>
+            <div class="logBox logImg">
+                <div class="allI">
+                  <p>欢迎登录，但您不是管理员</p>
+                  <p>只能看看首页啦！<a href="/">首页</a></p>
+                </div>
+            </div>
+          <%}%>
+      <%}else{%>
+      <div class="logBox logImg">
+          <div class="allI">
+             <p>您还没有登录，<a href="/log?page=allImage">请登录</a></p>
+          </div>
+      </div>
+      <%}%>
+ </div>
+<script type="text/javascript" src="/javascripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/allImg.js"></script>
+</body>
+</html>

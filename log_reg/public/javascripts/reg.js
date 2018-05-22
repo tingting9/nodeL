@@ -17,7 +17,7 @@
                     $('.msg').text(data.msg);
 
                 }else if(code==0){//成功
-                     // location.href = '/';
+                     location.href = '/';
                 };
             },
             error: function(data,status){ 
@@ -37,10 +37,10 @@
             type:'post',
             data:data,
             success:function(data,status){
-                var oImg=data.result[0].image.split('","');
-                    oImg=oImg[0];
- 
-                    $('img').attr({src: oImg});
+                // var oImg=data.result[0].image.split('","');
+                //     oImg=oImg[0];
+                var oImg=data.result[0].faceImg;
+               $('img').attr({src: oImg});
             },
             error:function(data,status){
 

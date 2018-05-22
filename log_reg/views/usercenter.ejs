@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+</head>
+<body>
+   <div class="boxBg">
+        <%if (typeof(user) != undefined && user) {%>
+        <div class="userTop">
+           <img src=<%= img %> alt="">
+        </div>
+        <div class="userLog">
+               <span><%= user.username%></span>
+           </div>
+        </div>
+        <%}else{%>
+        <div class="noUser">
+            <span>您还没有登录，<a href="/log?page=user">请登录</a></span>
+        </div>
+        <%}%>
+   </div>
+<script type="text/javascript" src="/javascripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/user.js"></script>
+</body>
+</html>

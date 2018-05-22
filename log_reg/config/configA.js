@@ -6,7 +6,7 @@ connection.select=function(sql,param){
 	 var promise = new Promise(function(resolve,reject) {//resolve成功,reject失败
         var result = null;
         var connection = mysql.createConnection({
-		    
+		   
 		});
 		connection.connect();
         connection.query(sql, param,function (err, results, fields) { 

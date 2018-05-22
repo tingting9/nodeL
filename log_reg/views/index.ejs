@@ -2,42 +2,50 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-
-    <div class="log">
-       <%if(typeof(user) !== 'undefined' && user){%>
-        <h1>Welcome <%= user.username %>, 欢迎登录！！</h1>  
-        <a class="btn" href="/logout">退出</a> 
-        <%}else{%> 
-        <p>Welcome  , <a class="btn" href="/log">请登录！！</a></p>  
-        <%}%> 
-    </div>
-
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
-    <p><a href="/log" >登录</a><a href="/reg">注册</a></p>
-
-    <!-- <p><a href="/mongo" >mongo</a></p> -->
-    
-    <!-- 循环 -->
-    <h4>循环</h4>
-     <ul>
-		<% for(var i=0; i<supplies.length; i++) {%>
-		   <li><%= supplies[i] %></li>
-		<% } %>
-	</ul>
-   <!-- 引入模版 -->
-  <h4>引入模版</h4>
-	<h2><%- include a %></h2>
-	<h2>hello,world!</h2>
-	<h2><%- include b %></h2>
-  <h4>循环</h4>
-    <ul>  
-      <% for(i=0; i< userlist.length; i++) {%>  
-         <li><a><%= userlist[i].username %></a></li>  
-      <% } %>  
-    </ul> 
+    <div class="contentBox">
+      <div class="log">
+         <%if(typeof(user) !== 'undefined' && user){%>
+          <div class="topName">
+            <span>Welcome</span>
+            <a href="/user" class="userName"><%= user.username%></a>,<a class="logBtn" href="/logout">退出</a> 
+          </div>  
+          <%}else{%> 
+          <div class="topName">
+            Welcome,<a class="logBtn" href="/log?page=">请登录！</a>
+          </div>  
+          <%}%> 
+      </div>
+      <div class="contentC">
+        <div class="logbox ">
+          <%if(typeof(user) !== 'undefined' && user){%>
+           <!-- 已登录 -->
+            <% if(user.username == 'suntt'){%>
+              <!--必须用suntt的帐户，才可以进入-->
+              <a href="/allImage" class="allImage" >进入我的旅游图片</a>
+              <p>Welcome to <%= user.username %>'s page</p>
+            <%}else{%>
+              <p>欢迎登录，但您不是管理员</p>
+              <p>只能看看首页啦！</p>
+            <%}%>
+          <%}else{%>
+            <!-- 未登录 -->
+            <h1><%= subject %></h1>
+            <p><!-- <a href="/log">登录</a> <a href="/reg">注册</a> --> </p>
+          <%}%>
+        </div>
+      </div>
+  </div>  
   </body>
 </html>

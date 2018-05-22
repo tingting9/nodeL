@@ -2,32 +2,42 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
     <link rel='stylesheet' href='/stylesheets/styleLog.css' />
   </head>
   <body>
-    <h3>注册</h3>
-    <form class="formBox" role="form" method="post" onsubmit="return false">
-        <div class="row">
-        <label class="useN" for="username">用户名</label>
-        <input type="text" class="useName" id="username" name="username" placeholder="用户名" required>
+    <div class="contentBox">
+        <h3>注册</h3>
+        <form class="formBox" role="form" method="post" onsubmit="return false">
+            <div class="row">
+            <label class="useN" for="username">用户名</label>
+            <input type="text" class="useName" id="username" name="username" placeholder="用户名" required>
+            </div>
+            <div class="row">
+            <label class="keyW" for="password2">密码</label>
+            <input type="password" class="keyWord" id="keyWord" name="keyWord" placeholder="密码" required>
+            </div>
+         <!--    <div class="row">
+            <label class="keyW2" for="password2">确认密码</label>
+            <input type="password" class="keyWord2" id="keyWord2" name="keyWord2" placeholder="确认密码" required>
+            </div> -->
+            <div class="row">
+                 <button type="submit" class="regBotn" id="regBotn">注册</button>
+            </div>
+        </form>
+        <div class="msg"></div>
+        <div class="boxTest">
+          <p>测试接口</p>
         </div>
-        <div class="row">
-        <label class="keyW" for="password2">密码</label>
-        <input type="password" class="keyWord" id="keyWord" name="keyWord" placeholder="密码" required>
-        </div>
-     <!--    <div class="row">
-        <label class="keyW2" for="password2">确认密码</label>
-        <input type="password" class="keyWord2" id="keyWord2" name="keyWord2" placeholder="确认密码" required>
-        </div> -->
-        <div class="row">
-             <button type="submit" class="regBotn" id="regBotn">注册</button>
-        </div>
-    </form>
-    <div class="msg"></div>
-    <div class="boxTest">
-      <p>测试接口</p>
+        <img src="/images/3.jpg" alt="">
     </div>
-    <img src="/images/3.jpg" alt="">
     <script type="text/javascript" src="/javascripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/reg.js"></script>
   </body>
