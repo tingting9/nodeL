@@ -9,7 +9,7 @@ h3{color:#c3b988;}
 h4{color:#6ddaad;font-size: 20px;}
 
 
-html,body{height:100%;overflow: hidden;}
+html,body{height:100%;}
 .imgAll,.logBox{width:100%;height: 100%;}
 .logImg{ display: table;}
 .allI {display: table-cell; vertical-align: middle; width:100%;text-align: center;}
@@ -17,14 +17,14 @@ html,body{height:100%;overflow: hidden;}
 .allI p a{color:#6ddaad;font-size:2.1rem;line-height: 2.6rem;text-decoration: underline;}
 .logBox{padding: 1.2rem 0;}
 .boxPhList{width:100%;padding:0 0.8rem; box-sizing: border-box; margin-bottom: 1rem;}
-.BoxL{width:30%;padding-right: 0.7rem;overflow: hidden;float:left;}
-.boxR{height:8rem;}
+.BoxL{width:30%;padding-right: 0.7rem;overflow: hidden;float:left;margin-bottom: 1rem;}
+
 .boxR h3{font-size: 1.6rem;line-height: 2.4rem;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;font-weight: 400;}
 .boxRtext{line-height: 1.4rem;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;color:#c2bda3;}
 .boxRtext span{font-size: 1.2rem;}
 .boxR p{font-size: 1.4rem;color:#cdcdcd;}
 .boxR p span{margin-right: 0.4rem;height: 2rem;}
-.boxRH{height:6rem;}
+
 
 .boxPhList:after{display: block; content: ''; overflow: hidden; width: 100%; height: 1px; background:#efefef; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5);margin-top: 1rem;}
 
