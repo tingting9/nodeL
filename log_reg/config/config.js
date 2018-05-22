@@ -6,7 +6,11 @@ var connection = {};
 connection.select=function(sql,param,callback){
     var result = null;
     var connection = mysql.createConnection({
-	   
+	    host:'qdm114284563.my3w.com',
+	    user:'qdm114284563',
+	    password:'whfstt1985',
+	    database:'qdm114284563_db',  //数据库名称
+	    port:'3306'
 	});
 	connection.connect();
 
