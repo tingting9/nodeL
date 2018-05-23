@@ -24,11 +24,11 @@ var loadApi = function(){
     this.getAllImage =function(callback){
         config.getConnection('SELECT adress,title,year,faceImg,listName,images FROM imgall',{},function(data){
 
-            //接口成功
+            //接口成功 转换格式
             if(data.code == 0){
                 var oResult=data.results;
                 var ImgURL='';
-
+              
                 //遍历所有的images
                 for(var i=0;i<oResult.length;i++){
                     var oIdata=oResult[i].images;
@@ -61,7 +61,7 @@ var loadApi = function(){
                     oResult[i].listName=oDataName;
                 };
             };
-            // console.log('-------------',data.results[1].allImg);
+
             callback&&callback(data);
         });
     };

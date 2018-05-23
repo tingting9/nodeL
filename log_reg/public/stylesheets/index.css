@@ -9,17 +9,16 @@ a:active{text-decoration:none;}/* 指正在点的链接*/
 .log h1{border-bottom: 1px solid #eee; }*/
 .contentBox{padding:1rem;box-sizing: border-box;font-size: 1.4rem;}
 .log{position: absolute; left: 1rem; top: 1rem; right: 1rem;z-index: 50;}
-.topName{color:#acacac; height: 3rem; line-height: 3rem;}
+.topName{color:#cbcbcb; height: 3rem; line-height: 3rem;}
 .userName{color:#ff9696;}
 .topName a{font-size: 1.4rem;}
 .logBtn{color:#c3b988;padding-left: 0.5rem;}
-.contentC h1{font: 2.6rem '微软雅黑'; color:#fff; text-shadow: 0 0 10px #ff889d;width: 100%; text-align: center;}
-.contentC{position: absolute; left:0;right:0;bottom:0; width:100%;height:100%;padding:0 1rem; box-sizing: border-box;display: flex; justify-content: center;
-    align-items: center;}
+.contentC h1{font: 2.6rem '微软雅黑'; color:#fff; text-shadow: 0 0 10px #ffb7c4;width: 100%; text-align: center;}
+.contentC{position: absolute; left:0;right:0;bottom:0; width:100%;height:100%;padding:0 1rem; box-sizing: border-box;display: flex; justify-content: center; align-items: center;}
 .logbox p a{color:#c3b988; text-align: center}
 .logbox p,.logbox h3{text-align: center;color:#ffcbd4;}
-.logbox .allImage{font-size: 2.2rem;color:#ffa8b7;}
-.logbox p{font-size:1.65rem;padding-top: 0.5rem; }
+.logbox .allImage{font-size: 2.2rem;color:#ffa8b7;display: block; text-align: center;}
+.logbox p{font-size:1.65rem;}
 .logbox p a:nth-child(2){color: #eee;}
 /*个人中心*/
 .boxBg{ height: 100%;width:100%;padding-top: 30%; display: flex; flex-direction: column; align-content: stretch;background:url('/images/userCenter.jpg') no-repeat center bottom;}

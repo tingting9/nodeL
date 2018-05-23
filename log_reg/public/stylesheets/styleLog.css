@@ -10,14 +10,14 @@ h4{color:#6ddaad;font-size: 20px;}
 .log h1{border-bottom: 1px solid #eee; }
 
 .contentBox{padding:1rem;box-sizing: border-box;font-size: 1.4rem;}
-h3{height:5rem;line-height: 5rem; color: #ffbaba;font-size: 3rem;}
+h3{height:5rem;line-height: 5rem; color: #ffbaba;font-size: 3rem;font-weight: 100;}
 label{width: 70px; display: inline-block;text-align: left;}
 .boxTest p{border:1px solid #ccc;background-color: #eee;border-radius: 2px;width:100px;height:26px;line-height: 26px;font-size: 16px;text-align: center;color:#dd94db;cursor: pointer;}
 img{width:200px;}
-.logBoxline:after,.row:after{display: block; content: ''; overflow: hidden; width: 100%; height: 1px; background: #ccc; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); }
-.username,.keyword,.row{color: #929292;height: 5rem; line-height: 5rem; width: 100%; padding: 0 0.5rem; box-sizing: border-box; font-size: 1.8rem;}
+.logBoxline:after,.row:after{display: block; content: ''; overflow: hidden; width: 100%; height: 1px; background: #e3e3e3; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); }
+.username,.keyword,.row{color: #929292;height: 5rem; line-height: 5rem; width: 100%; padding: 0 0.5rem; box-sizing: border-box; font-size: 1.6rem;}
 #username::-webkit-input-placeholder,#keyword::-webkit-input-placeholder,#keyWord::-webkit-input-placeholder{color:#eee;}
-.logBtn div,.regBotn{width: 100%; height: 4rem; line-height: 4rem; font-size: 2rem; text-align: center; border: 1px solid #e6e6e6; background-color: #f7f7f7;color: #9e9e9e;}
+.logBtn div,.regBotn{border-radius: 0.2rem;width: 100%; height: 4rem; line-height: 4rem; font-size: 2rem; text-align: center; border: 1px solid #e6e6e6; background-color: #f7f7f7;color: #9e9e9e;}
 .logBtn{padding: 2rem 0;}
 .msg{color: #ffa9a9;}
 .btn_log i{width:1rem; display: inline-block;}
