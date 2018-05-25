@@ -4,7 +4,12 @@
     $("#regBotn").click(function(){ 
         var username = $("#username").val().toLowerCase();
         var password = $("#keyWord").val();
-        // var password2 = $("#keyWord2").val();
+        
+        if(username=='' || password==''){
+            $(".msg").text('用户名或密码不能为空');
+            return false
+        };
+
         var data = {"username":username,"password":password};
         
         $.ajax({ 
@@ -27,26 +32,5 @@
             }
         });
     });
-    $('.boxTest p').click(function(event) {
-        var oFrom = '山西';
-        var oYear = 2011;
-        var data = {'oFrom':oFrom,'year':oYear};
-  
-        $.ajax({
-            url:'/users/publicA',
-            type:'post',
-            data:data,
-            success:function(data,status){
-                // var oImg=data.result[0].image.split('","');
-                //     oImg=oImg[0];
-                var oImg=data.result[0].faceImg;
-               $('img').attr({src: oImg});
-            },
-            error:function(data,status){
-
-            }
-
-        })
-        /* Act on the event */
-    });;
+    
 });

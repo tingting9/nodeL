@@ -7,18 +7,18 @@ li{color:#ff9696;}
 h2{color:#85bfb5;}
 h3{color:#c3b988;}
 h4{color:#6ddaad;font-size: 20px;}
+.clearfix::after, .clearfix::before{display: table; line-height: 0; content: "";};
 
-
-html,body{height:100%;}
-.imgAll,.logBox{width:100%;height: 100%;}
+html,body{width:100%;height: 100%;}
+/*图片列表*/
+.imgAll,.logBox,.imgAllDiv{width:100%;height: 100%;}
 .logImg{ display: table;}
 .allI {display: table-cell; vertical-align: middle; width:100%;text-align: center;}
 .allI p{font-size:2.1rem;line-height: 2.6rem;color:#85bfb5;}
 .allI p a{color:#6ddaad;font-size:2.1rem;line-height: 2.6rem;text-decoration: underline;}
 .logBox{padding: 1.2rem 0;}
-.boxPhList{width:100%;padding:0 0.8rem; box-sizing: border-box; margin-bottom: 1rem;}
+.boxPhList{width:100%;padding:0 0.8rem; box-sizing: border-box; margin-bottom: 1rem;cursor: pointer;}
 .BoxL{width:30%;padding-right: 0.7rem;overflow: hidden;float:left;margin-bottom: 1rem;}
-
 .boxR h3{font-size: 1.6rem;line-height: 2.4rem;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;font-weight: 400;}
 .boxRtext{line-height: 1.4rem;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;color:#c2bda3;}
 .boxRtext span{font-size: 1.2rem;}
@@ -28,6 +28,45 @@ html,body{height:100%;}
 .boxPhList:nth-last-child(1):after{height:0;}
 .boxPhList:after{display: block; content: ''; overflow: hidden; width: 100%; height: 1px; background:#efefef; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5);margin-top: 1rem;}
 
+/*每年列表*/
+html,body{width:100%;height: 100%;}
+.imgAllDiv{background:#e7e7e7; }
+.imgYearLi:before {content: ""; width: 2.5px; height: 100%; background: #a5d9d0; position: absolute; top: 0; left: 1.2rem; }
+.imgLiyuan{width: 50px; height: 50px; border-radius: 50%; background: #1abc9c; overflow: hidden; margin-left: -23px; position: absolute; top: 10rem; left: 5rem; text-align: center;}
+.imgYearLi{position: relative;padding-bottom: 1.8rem;}
+.imgYearLi:nth-last-child(1){padding:0;}
+.imgStar{ height: 100%; background: red; position: relative; top: 0; left: 2rem;}
+.starDiv{width:2.5rem; height:2.5rem; border-radius: 50%; background: #1abc9c; overflow: hidden;  position: absolute; top: 0rem; left: 0rem; text-align: center;}
+.starDiv span{font-size: 2rem; line-height: 2.6rem; color: #fff;display:block;width: 2.5rem; height: 2.5rem;}
+.starDiv span:before {content: "☆"; }
+.imgLiD{padding: 2rem 0;box-sizing: border-box;}
+.imgLiDiv{background: #fff;border-radius: 1rem; box-shadow: 0.1rem 0.1rem 0.2rem #a8c0bc;margin-left: 3.2rem;}
+.imgLiDiv h3{font-size: 1.5rem; font-weight: 100;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;height:3rem;background: #1abc9c;padding:0 0.8rem;box-sizing: border-box;color:#fff;line-height: 3rem;}
+.imgLiTix{ padding:0.8rem; box-sizing: border-box; }
+.imgLiTix p{color: #726f77;font-size: 1.3rem;line-height: 1.6rem;word-wrap: break-word; word-break: break-all; overflow: hidden;}
+.imgLiDiv span{display: block; width:100%;height:2rem;color: #1abc9c; font-size: 1.4rem;text-align: right;padding: 0 0.8rem; box-sizing: border-box; line-height: 2rem;}
+
+/*图片详情*/
+.imgTop{height: 5rem;background: #fff;position: fixed;top:0;left:0;right:0;z-index: 10;border-bottom: 1px solid #eee;padding:0 1rem;box-sizing: border-box;box-shadow: 0 0 10px #eee;}
+.imgTopBg{height: 5rem;width:100%;}
+.imgFace{width:3.8rem;height: 3.8rem; background: #85bfb5;border-radius:50%;overflow: hidden;margin-top: 0.5rem;border: 0.04rem solid #85bfb5;}
+.imgTop>div{float:left;}
+.imgLi{padding: 0.7rem 0 0 1rem;}
+.imgYear{font-size: 1.6rem; color: #85bfb5; line-height: 2rem;}
+.imgYear:nth-child(2){color: #c4dfda;line-height: 1.6rem;font-size: 1.4rem;}
+.imgCent{padding:0 1rem 1rem 1rem;box-sizing: border-box;background: #e7e7e7; }
+.imgTit{color:#85bfb5;font-size: 1.8rem;height: 3rem;line-height: 3rem; clear: both;}
+.imgSrc{width:47%;float: left;margin-bottom: 5%;}
+.imgSrc:nth-child(even){margin-right: 0;}
+.imgSrcBox{border-radius: 0.4rem; overflow: hidden;}
+.imgCtit {padding: 1rem 0;}
+
+.disText{width:100%;resize:none;margin-bottom: 0.5rem;}
+.disText::-webkit-input-placeholder,#keyword::-webkit-input-placeholder,#keyWord::-webkit-input-placeholder{color:#eee;}
+#masonry{margin-right: -11px;}
+.imgSrcW{position: relative;left:0;top: 0;}
+.imgText{position: absolute;left: 0;bottom:0;right:0;background:rgba(0,0,0,0.2);box-sizing: border-box;}
+.imgText p{ word-wrap: break-word; word-break: break-all; overflow: hidden;padding:0 0.5rem; line-height: 1.6rem;color:#fff;}
 
 
 

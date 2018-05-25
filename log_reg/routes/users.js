@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router(); // 产生实例对象
 var mysql = require('mysql');
 
 //连接服务器
@@ -15,10 +15,11 @@ router.route('/signup')
     .post(function(req, res) {
 	    var username = req.body.username;
 	    var password = req.body.keyword;
-	  	config.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){
 
+	  	config.getConnection('SELECT * FROM register where regName = "'+username+'" and keyword = "'+password+'";',{},function(data){
+            console.log(data)
 	  		if (data.code == 1) {
-                    res.json({code:'1',msg:'没有该用户'});
+                    res.json({code:'1',msg:'用户名错误或者密码错误'});
             } ;
             if(data.code==0){
             	var oKey=data.results[0].keyword;
@@ -42,17 +43,23 @@ router.route('/signup')
         var username = req.query.username; 
 	    var password = req.query.password;
 	    var dataInf= {"regName":username,"keyword":password};
+        config.getConnection('SELECT * FROM register where regName = "'+username+'";',{},function(data){;
+            
+            if(data.code==1){//用户名 没有重名
+                config.getConnection('insert into register set ?;',dataInf,function(data){
+                    if(data.code==0){
+                        res.cookie("user", {username: username}, {maxAge: 100000 , httpOnly: false});
+                        res.json({code:'0',msg:'注册成功'});
+                        
+                    }else if(data.code==1){
+                        res.json({code:'1',msg:'注册失败'});
 
-        config.getConnection('insert into register set ?;',dataInf,function(data){
-            if(data.code==0){
-                res.cookie("user", {username: username}, {maxAge: 100000 , httpOnly: false});
-                res.json({code:'0',msg:'注册成功'});
-                
-            }else if(data.code==1){
-                res.json({code:'1',msg:'注册失败'});
-
+                    };
+                });
+            }else if(data.code==0){ //用户名 已存在
+                res.json({code:'1',msg:'用户名已存在'});
             };
-        });
+        })
   	});
 
 router.route('/publicA')
@@ -69,8 +76,8 @@ router.route('/publicA')
             }
         });
     })
-    .get(function(req,res){//获取图片  我的图片页 allimage
-        config.getConnection('SELECT adress,title,year,faceImg,listName,images  FROM imgall',{},function(data){
+    .get(function(req,res){//获取图片  我的图片页 yearList
+        config.getConnection('SELECT adress,title,year,faceImg,listName,images,id  FROM imgall',{},function(data){
             if(data.code == 1){
                 res.json({code:'1',msg:'没有相关内容'});
 

@@ -1,7 +1,7 @@
 
   $(function(){ 
     //登陆
-    $("#btn_log").click(function(){ 
+    $('.logBtn').on('click keydown','.btn_log',function(event){
         var username = $("#username").val().toLowerCase();
         var password = $("#keyword").val();
         var lastPage = $("#btn_log").attr('data-lastPage');//来源

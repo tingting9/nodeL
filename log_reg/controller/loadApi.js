@@ -22,7 +22,7 @@ var loadApi = function(){
 
     //我的旅游图片 list
     this.getAllImage =function(callback){
-        config.getConnection('SELECT adress,title,year,faceImg,listName,images FROM imgall',{},function(data){
+        config.getConnection('SELECT * FROM imgall',{},function(data){
 
             //接口成功 转换格式
             if(data.code == 0){
@@ -55,16 +55,27 @@ var loadApi = function(){
                         oResult[i].allImg=allImg;
                     };
 
-                    //遍历地名
+                    //遍历 listName
                     var oIdataName=oResult[i].listName;
-                    var oDataName=JSON.parse(oIdataName);//images已转成json
-                    oResult[i].listName=oDataName;
+                    if(oIdataName){
+                        var oDataName=JSON.parse(oIdataName);//images已转成json
+                        oResult[i].listName=oDataName;
+                    };
+
+                    //遍历 listNameCent
+                    var oIistNameCent=oResult[i].listNameCent;
+                    if(oIistNameCent){
+                        var oDataNameL=JSON.parse(oIistNameCent);//images已转成json
+                        oResult[i].listNameCent=oDataNameL;
+                    };
+                    
                 };
             };
 
             callback&&callback(data);
         });
     };
+    
 };
 
 var oWork = new loadApi();

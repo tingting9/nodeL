@@ -1,5 +1,5 @@
 var express = require('express');
-var path = require('path');
+var path = require('path');   //处理文件路径
 var app = express();
 
 
@@ -17,11 +17,14 @@ app.use(cookieParser());
 
 
 // view engine setup
+//console.log('111',path.join(__dirname, 'views'));
+// F:\homework\nodejs_my\nodeL\log_reg\views
+
 app.set('views', path.join(__dirname, 'views'));   //设置模板资源路径
 app.set('view engine', 'ejs');                     //设置模板引擎，代表视图后缀名是ejs
 
 
-app.use('/', index); //模版
+app.use('/', index); //模版  特定的中间件加载到特定的请求路径下面
 app.use('/users', users);//接口
 
 // app.all('*', function(req, res, next) {
@@ -35,6 +38,7 @@ app.use('/users', users);//接口
 
 //指定静态资源位置 *托管静态文件 (下面个方法相同)
 app.use(express.static(path.join(__dirname, 'public')));
+
 // app.use(express.static(__dirname + '/public'));
 //访问静态资源地址，http://localhost:3000/images/3.jpg
 //_dirname变量获取当前模块文件所在目录的完整绝对路径

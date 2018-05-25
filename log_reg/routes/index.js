@@ -65,10 +65,20 @@ router.get('/user',function(req,res,next){
 });
 
 
-//我的旅游照片
-router.get('/allImage',function(req,res){
-    showEjs.loadImg(req,res);
+//全部年份列表
+router.get('/yearList',function(req,res){
+   showEjs.loadImg(req,res);
 });
+
+//某年的月份列表
+router.get('/everyYear',function(req,res){
+   showEjs.loadImg(req,res);
+});
+
+router.get('/imagePage',function(req,res){
+   showEjs.loadImg(req,res);
+});
+
 
 //--------------------------------------------
 //本地mongoose库的连接方法

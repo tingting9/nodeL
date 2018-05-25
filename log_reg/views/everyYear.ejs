@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel='stylesheet' href='/stylesheets/base.min.css' />
+    <link rel='stylesheet' href='/stylesheets/allImg.css' />
+</head>
+<body>
+  <div class="imgAllDiv" id="imgAllDiv">
+      <%if (typeof(user) != undefined && user) {%>
+      <!-- 已登录 -->
+          <% if(user == 'suntt'){%>
+            <!--必须用suntt的帐户-->
+            <div class="imgTop">
+              <div class="imgFace"><img src=<%= list.faceImg%> alt=""></div>
+              <div class="imgLi">
+                <div class="imgYear"><%= list.title%></div>
+                <div class="imgYear getYear" data-id=<%=list.id %> ><%= list.year%></div>
+              </div>
+            </div>
+            <div class="imgTopBg"></div>
+            <div class="imgCent">
+               <!--内容 -->
+               <div class="imgLiD">
+                  <% for(var i in list.listName){%>
+                  <div class="imgYearLi">
+                    <div class="starDiv">
+                      <span></span>
+                    </div>
+                    <div class="imgLiDiv" >
+                        <h3><%= list.listName[i]%></h3>
+                        <div class="imgLiTix">
+                          <% if(list.listNameCent !=null){%>
+                          <p><%= list.listNameCent[i]%></p>
+                          <% }else{%>
+                          <p>目前没有内容，快去添加吧</p>
+                          <%}%>
+                       </div>
+                       <span data-month=<%= i%>>more...</span>
+                    </div>
+                  </div>
+                  <%}%>
+               </div>
+            </div>
+          <%}else{%>
+            <div class="logBox logImg">
+                <div class="allI">
+                  <p>欢迎登录，但您不是管理员</p>
+                  <p>只能看看首页啦！<a href="/">首页</a></p>
+                </div>
+            </div>
+          <%}%>
+      <%}else{%>
+      <div class="logBox logImg">
+          <div class="allI">
+             <p>您还没有登录，<a href="/log?page=everyYear">请登录</a></p>
+          </div>
+      </div>
+      <%}%>
+  </div>
+<script type="text/javascript" src="/untill/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/allImg.js"></script>
+</body>
+</html>

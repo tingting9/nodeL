@@ -4,6 +4,7 @@ a:link{text-decoration:none; }  /* 指正常的未被访问过的链接*/
 a:visited{text-decoration:none;} /*指已经访问过的链接*/
 a:hover{text-decoration:none;/*指鼠标在链接*/}
 a:active{text-decoration:none;}/* 指正在点的链接*/ 
+input:focus, textarea:focus{ outline: 0; border: 1px solid #e6e6e6; background-color: #f7f7f7;}
 /*首页*/
 /*h1{color:#e89ede;}
 .log h1{border-bottom: 1px solid #eee; }*/
